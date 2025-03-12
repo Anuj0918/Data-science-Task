@@ -10,7 +10,7 @@ This project builds a RAG and Text-to-SQL query app in a single interface. We us
 
 
 ## 🧵 Twitter Thread  
-**[X Thread](https://typefully.com/Anuj2208/EJEGoEp)** 
+**[X Thread](https://typefully.com/t/EJEGoEp)** 
 
 ---
 

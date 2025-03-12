@@ -4,13 +4,13 @@ This project builds a RAG and Text-to-SQL query app in a single interface. We us
 
 - **OpenAI** to power the LLM capabilities  
 - **LlamaIndex** for orchestrating the RAG app  
-- **SQL Database** for storing the data from CSV files  
-- **Streamlit** to build the UI  
+- **SQL Database** for storing and processing data from CSV files.  
+- **Streamlit** Provides an interactive and user-friendly UI. 
 
 
 
 ## 🧵 Twitter Thread  
-**[X Thread](https://typefully.com/Anuj2208/EJEGoEp)** 
+**[X Thread](https://typefully.com/t/EJEGoEp)** 
 
 ---
 

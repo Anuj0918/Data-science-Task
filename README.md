@@ -1,27 +1,57 @@
-# LlamaCloud Demo
+# RAG and Text-to-SQL Query in Single Interface
 
-This repository contains a collection of cookbooks to show you how to build LLM applications using LlamaCloud to help manage your data pipelines, and LlamaIndex as the core orchestration framework.
+This project builds a RAG and Text-to-SQL query app in a single interface. We use:
 
-## Getting Started
+- **OpenAI** to power the LLM capabilities  
+- **LlamaIndex** for orchestrating the RAG app  
+- **SQL Database** for storing the data from CSV files  
+- **Streamlit** to build the UI  
 
-1. Follow the instructions in the section below for setting up the Jupyter Environment.
-1. Go to [https://cloud.llamaindex.ai/](https://cloud.llamaindex.ai/) and create an account using one of the authentication providers.
-1. Once logged in, go to [the API Key page](https://cloud.llamaindex.ai/api-key) and create an API key. Copy that generated API key to your clipboard.
-1. Go back to LlamaCloud. Create a project and initialize a new index by specifying the data source, data sink, embedding, and optionally transformation parameters. 
-1. Open one of the Jupyter notebooks in this repo (e.g. `examples/getting_started.ipynb`) and paste the API key into the first cell block that reads `os.environ["PLATFORM_API_KEY"] = "..."`
-1. Copy the `index_name` and `project_name` from the deployed index into the `LlamaCloudIndex` initialization in the notebook.
 
-That should get you started! You should now be able to create an e2e pipeline with a LlamaCloud pipeline as the backend.
 
-## Setting up the Jupyter Environment
-Here's some commands for installing the Python dependencies & running Jupyter.
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-jupyter lab
+## 🧵 Twitter Thread  
+**[X Thread](https://typefully.com/Anuj2208/EJEGoEp)** 
+
+---
+
+## 🚀 Installation and Setup  
+
+## 1️. Setup OpenAI and LlamaCloud
+
+Get an API key from [OpenAI](https://openai.com) and set it in the `.env` file:
+
+Get an API key from [Llama Cloud](https://www.llama.cloud) and set it in the `.env` file:
+
+
+```ini
+OPENAI_API_KEY="your-openai-api-key"
+
+name="your-llama-cloud-index-name"
+project_name="your-llama-cloud-project-name"
+organization_id="your-llama-cloud-organization-id"
+api_key="your-llama-cloud-api-key"
 ```
+## 2. Install Dependencies and Run the App
+   
+```ini  
+  pip install streamlit llama-index openai sqlalchemy python-dotenv nest-asyncio
+ ```
+## How to Use
 
-Notebooks are in `examples`.
+1. **Upload a CSV file** using the file uploader in the main interface.
+2. **Ask questions** in natural language in the text input field, such as:
+   - "Tell me about the history of Los Angeles City."
+   - "Which states have cities with populations over 1 million?"
+3. The application will **automatically determine** whether to use SQL or RAG to answer your question and display the results.
 
-Note: if you encounter package issues when running notebook examples, please `rm -rf .venv` and repeat the above steps again.
+### How It Works:
+The system **routes queries** between:
+- **Text-to-SQL Tool** → Translates natural language into SQL queries for structured data analysis.
+- **Llama Cloud RAG Tool** → Retrieves information from a knowledge base for contextual answers.
+
+
+```ini  
+  streamlit run app.py
+ ```
+
+
